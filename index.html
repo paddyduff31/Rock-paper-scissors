@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock, paper, scissors</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+        console.log(computerPlay());
+
+        function computerPlay(){
+            let choice = ['rock', 'paper', 'scissors'];
+            let cNumber = Math.floor(Math.random() * Math.floor(3))
+            return choice[cNumber];
+        }
+
+        function winner(playerSelection, computerSelection){
+            lowerPlayerSelection = playerSelection.ToLowerCase();
+            if (lowerPlayerSelection = 'rock') {
+                if (computerSelection = 'paper'){
+                    console.log('You Lose! Paper beats Rock!');
+                } else {
+                    console.log('You Win! Rock beats Scissors!');
+                }
+            } else if (lowerPlayerSelection = 'paper') {
+                if (computerSelection = 'scissors') {
+                    console.log('You Lose! Scissors beats Paper!');
+                } else {
+                    console.log('You Win! Paper beats Rock!');
+                }
+            } else if (lowerPlayerSelection = 'scissors') {
+                if (computerSelection = 'rock') {
+                    console.log('You Lose! Rock beats Scissors!');
+                } else {
+                    return 'You Win! Scissors beats Paper!';
+                }
+            } else return 'You have not entered a valid option'
+
+        }
+  </script>
+</body>
+</html>
