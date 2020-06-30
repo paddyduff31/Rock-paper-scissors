@@ -1,75 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Rock, paper, scissors</title>
-  <meta charset="UTF-8"/>
+    <title>Rock, paper, scissors</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Welcome to Rock, Paper, Scissors</h1>
-    <p>Press F12 to open the console to see results!</p>
-  <script>
-        let numberOfRounds = window.prompt('How many rounds would you like to play?')
-        var totalComputer = 0
-        var totalUser = 0
-        game(numberOfRounds)
-        if (totalUser>totalComputer){
-            console.log('Well done, you won!!')
-        } else if(totalComputer>totalUser) {
-            console.log('Too bad, you lose!!')
-        } else {console.log('Its a draw!!')}
+    <div class="container">
+        <div class="welcome">
+            <h1>Welcome to Rock, Paper, Scissors</h1>
+            <hr>
+            <p>Please choose....Rock, paper or scissors?</p>
+            <br>
+            <div class="buttons">
+                <button id="rock" class="rock" value="rock">&#9994;</button>
+                <button id="paper" class="paper" value="paper">&#9995;</button>
+                <button id="scissors" class="scissors" value="scissors">✌️</button>
+            </div>
+            <hr>
 
-
-        function game(numberOfRounds){
-            for (i=0; i<numberOfRounds; i++) {
-                console.log(playRound())
-            }
-        }
-
-        function playRound() {
-            let computerSelection = computerPlay()
-            playerSelection = window.prompt('Rock, Paper or Scissors?')
-            console.log('Computer chooses ' + computerSelection)
-            lowerPlayerSelection = playerSelection.toLowerCase();
-            if (lowerPlayerSelection == 'rock') {
-                if (computerSelection == 'paper'){
-                    totalComputer ++
-                    return 'You Lose! Paper beats Rock!'
-                } else if (computerSelection == 'scissors') {
-                    totalUser ++
-                    return 'You Win! Rock beats Scissors!'
-                } else {
-                    return 'DRAW!'
-                }
-            } else if (lowerPlayerSelection == 'paper') {
-                if (computerSelection == 'scissors') {
-                    totalComputer ++
-                    return 'You Lose! Scissors beats Paper!'
-                } else if (computerSelection == 'rock') {
-                    totalUser ++
-                    return 'You Win! Paper beats Rock!'
-                } else {
-                    return 'DRAW!'
-                }
-            } else if (lowerPlayerSelection == 'scissors') {
-                if (computerSelection == 'rock') {
-                    totalComputer ++
-                    return 'You Lose! Rock beats Scissors!'
-                } else if (computerSelection == 'paper') {
-                    totalUser ++
-                    return 'You Win! Scissors beats Paper!'
-                } else {
-                    return 'DRAW!'
-                }
-            } else return 'You have not entered a valid option'
-        }
-
-        function computerPlay(){
-            let choice = ['rock', 'paper', 'scissors'];
-            let cNumber = Math.floor(Math.random() * Math.floor(3))
-            return choice[cNumber];
-        }
-
-
-  </script>
+        </div>
+        <div class="bottomBox">
+            <div id="computerSelection"><h2 style="font-size: 20px;">Computer Selction</h2></div>
+            <div id="result" ><h2 style="font-size: 20px;">Result</h2></div>
+        </div>
+        <hr>
+        <div id="finalScore"></div>
+    </div>
+    <script src='script.js'></script>
 </body>
+
 </html>
